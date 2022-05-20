@@ -1,223 +1,3 @@
-// Album Data from API + two extra albums I added
-let data = [
-    {
-        "id":1,
-        "name":"If Your'e Reading This It's Too Late",
-        "artist_name":"DRAKE",
-        "cover_photo_url":"https://s3.amazonaws.com/hakuapps/prod/album-1.png"
-    },
-        
-    {
-        "id":2,
-        "name":"Hotter Than July",
-        "artist_name":"Stevie Wonder",
-        "cover_photo_url":"https://s3.amazonaws.com/hakuapps/prod/album-2.png"
-    },
-    
-    {
-        "id": 3,
-        "name":"Overexposed",
-        "artist_name":"Maroon 5",
-        "cover_photo_url":"https://s3.amazonaws.com/hakuapps/prod/album-3.png"
-    },
-    
-    {
-        "id":4,
-        "name":"Hit n Run Phase One",
-        "artist_name":"PRINCE",
-        "cover_photo_url":"https://s3.amazonaws.com/hakuapps/prod/album-4.png"
-    },
-    
-    {
-        "id":5,
-        "name":"Brothers",
-        "artist_name":"The Black Keys",
-        "cover_photo_url":"https://s3.amazonaws.com/hakuapps/prod/album-5.png"
-    },
-
-    {
-        "id":6,
-        "name":"Heavier Things",
-        "artist_name":"John Mayer",
-        "cover_photo_url":"https://1.bp.blogspot.com/-s49oe2AMRyo/TsJWSFbc26I/AAAAAAAAC9A/Vjcr3WEh5q4/s1600/Front%2BCover.jpg"
-    },
-
-    {
-        "id":7,
-        "name":"Bad",
-        "artist_name":"Michael Jackson",
-        "cover_photo_url":"https://4.bp.blogspot.com/-fMueiD0i4-c/Waj52-tTG6I/AAAAAAAAS7s/PH4ElumXmP8XtonNKYEAHCrGAtifguWtACLcBGAs/s1600/Sdrergrt.png"
-    }
-];
-
-// Tracks for two of the albums + 
-let tracks = [
-    {
-        "id": 1,
-        "album_id": 1,
-        "song_name":"Legend",
-        "song_order": 1,
-        "song_label": ["explicit","upbeat"],
-        "song_duration":"4:01"
-    },
-
-    {
-        "id": 2,
-        "album_id": 1,
-        "song_name":"Energy",
-        "song_order": 2,
-        "song_label":null,
-        "song_duration":"3:01"
-    },
-
-    {
-        "id":3,
-        "album_id":1,
-        "song_name":"10 Bands",
-        "song_order":3,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"2:57"
-    },
-
-    {
-        "id":4,
-        "album_id":1,
-        "song_name":"Know Yourself",
-        "song_order": 4,
-        "song_label":null,
-        "song_duration":"4:35"
-    },
-
-    {
-        "id":5,
-        "album_id":1,
-        "song_name":"No Tellin’",
-        "song_order":5,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"5:10"
-    },
-
-    {
-        "id":6,
-        "album_id":1,
-        "song_name":"Madonna",
-        "song_order":6,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"2:57"
-    },
-
-    {
-        "id":7,
-        "album_id":1,
-        "song_name":"6 God",
-        "song_order":7,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"3:00"
-    },
-
-    {
-        "id":8,
-        "album_id":1,
-        "song_name":"Star67",
-        "song_order":8,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"4:54"
-    },
-
-    {
-        "id":11,
-        "album_id":3,
-        "song_name":"One More Night",
-        "song_order":4,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"3:39"
-    },
-    
-    {
-        "id":12,
-        "album_id":3,
-        "song_name":"Payphone",
-        "song_order":3,
-        "song_label":[],
-        "song_duration":"3:51"
-    },
-
-    {
-        "id":13,
-        "album_id":3,
-        "song_name":"Daylight",
-        "song_order":1,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"3:45"
-    },
-    
-    {
-        "id":14,
-        "album_id":3,
-        "song_name":"Lucky Strike",
-        "song_order":5,
-        "song_label":null,
-        "song_duration":"3:05"
-    },
-    
-    {
-        "id":15,
-        "album_id":3,
-        "song_name":"The Man Who Never Lied",
-        "song_order":2,
-        "song_label":["explicit","upbeat"],
-        "song_duration":"3:25"
-    },
-
-    {
-        "id": 1,
-        "album_id": 6,
-        "song_name":"Clarity",
-        "song_order": 1,
-        "song_label": ["upbeat"],
-        "song_duration":"4:28"
-    },
-
-    {
-        "id": 2,
-        "album_id": 6,
-        "song_name":"Bigger Than My Body",
-        "song_order": 2,
-        "song_label":null,
-        "song_duration":"4:26"
-    },
-
-    {
-        "id":3,
-        "album_id":6,
-        "song_name":"Something's Missing",
-        "song_order":3,
-        "song_label":["upbeat"],
-        "song_duration":"5:04"
-    },
-
-    {
-        "id":4,
-        "album_id":6,
-        "song_name":"Daughters",
-        "song_order": 4,
-        "song_label":null,
-        "song_duration":"3:58"
-    },    
-];
-
-// const params = {
-//     method: 'GET',
-//     headers: {
-//         'accept': 'application/json'
-//     }
-// };
-
-
-// Array to store all album objects
-let jukeboxAlbums = [];
-// let data = fetch('https://stg-resque.hakuapp.com/albums.json', params).then((res)=>{return res.json()});
-
 // Album object with constructor and each json field as defined
 class Albums {
     constructor(albumId, albumName, artistName, albumImage) {
@@ -242,64 +22,94 @@ class Track {
     }
 }
 
-// loads items to window
-window.onload = function initJukebox() {
-    // let albumsURL = "https://stg-resque.hakuapp.com/songs.json?album_id=";
-
-    // processes albums json objects and creates album objects to store in array of albums
-    data.map(function(album) {
-        let newAlbum = new Albums(album.id, album.name, album.artist_name, album.cover_photo_url);
-        console.log(newAlbum);
-        jukeboxAlbums.push(newAlbum);
-    })
-
-    // processes tracks json objects and creates tracks to store in each corresponding album
-    tracks.map(function(track) {
-        let trackFav = Boolean(false);
-        let newTrack = new Track(track.id, track.album_id, track.song_name, track.song_order, track.song_label, track.song_duration, trackFav);
-        console.log(newTrack);
-        if (jukeboxAlbums.findIndex(obj => obj.id == newTrack.albumRef)) {
-            let albumIndex = jukeboxAlbums.findIndex(obj => obj.albumId == newTrack.albumRef);
-            let album = jukeboxAlbums[albumIndex];
-            album.albumTracks.push(newTrack);
-        }
-    })
-
-    // location in html where album cards will go
-    let albumSlider = document.getElementsByClassName("cards-container")[0];
-
-    // for each album in array of albums it will contstruct the html for the album card
-    jukeboxAlbums.forEach((album)=>{
-        if(album.albumId < 6) {
-            albumCard = document.createElement('li');
-            albumCard.setAttribute("class", "box");
-            albumCard.innerHTML = `
-                <img src="${album.albumImage}" alt="${album.albumName}" >
-                <div class="card-title" id="${album.albumId}">
-                    <h2><b>${album.albumName.toUpperCase()}</b></h2>
-                    <p>${album.artistName.toUpperCase()}</p>
-                </div>
-            `
-            albumSlider.appendChild(albumCard);
-        }
-        else {
-            albumCard = document.createElement('li');
-            albumCard.setAttribute("class", "box box--hide");
-            albumCard.innerHTML = `
-                <img src="${album.albumImage}" alt="${album.albumName}" >
-                <div class="card-title" id="${album.albumId}">
-                    <h2><b>${album.albumName.toUpperCase()}</b></h2>
-                    <p>${album.artistName.toUpperCase()}</p>
-                </div>
-            `
-            albumSlider.appendChild(albumCard);
-        }
-    })
-
-    // function to get tracks for selected album
-    getTracks();
-
+function compare(a, b) {
+    const numA = a.trackIndex;
+    const numB = b.trackIndex;
+  
+    if (numA > numB) {
+      return 1;
+    } else if (numA < numB) {
+        return -1;
+    }
+    return 0;
 }
+
+const params = {
+    method: 'GET',
+    headers: {
+        'accept': 'application/json'
+    }
+};
+
+
+// Array to store all album objects
+let jukeboxAlbums = [];
+let albumSlider = document.getElementsByClassName("cards-container")[0];
+
+function initData() {
+
+    let album_res = fetch('https://cors-anywhere.herokuapp.com/https://stg-resque.hakuapp.com/albums.json').then((res)=>{
+        return res.json();
+    });
+
+    album_res.then((albumData)=>{
+        for (let index = 0; index < albumData.length; index++) {
+            const element = albumData[index];
+            let newAlbum = new Albums(element.id, element.name, element.artist_name, element.cover_photo_url);
+            
+            let track_res = fetch('https://cors-anywhere.herokuapp.com/https://stg-resque.hakuapp.com/songs.json?album_id=' + String(element.id)).then((res)=>{
+                return res.json();
+            });
+            
+            track_res.then((songData)=>{
+                for (let i = 0; i < songData.length; i++) {
+                    const song = songData[i];
+                    let trackFav = 0;
+                    let newTrack = new Track(song.id, song.album_id, song.song_name, song.song_order, song.song_label, song.song_duration, trackFav);
+                    newAlbum.albumTracks.push(newTrack);      
+                }
+                newAlbum.albumTracks.sort((a,b) => a.trackIndex - b.trackIndex);
+            });
+
+            jukeboxAlbums.push(newAlbum);    
+            console.log(jukeboxAlbums);
+
+
+            console.log(newAlbum);
+            console.log(element.name);
+        }
+
+        jukeboxAlbums.forEach((album)=>{
+            if(album.albumId < 6) {
+                albumCard = document.createElement('li');
+                albumCard.setAttribute("class", "box");
+                albumCard.innerHTML = `
+                    <img src="${album.albumImage}" alt="${album.albumName}" >
+                    <div class="card-title" id="${album.albumId}">
+                        <h2><b>${album.albumName.toUpperCase()}</b></h2>
+                        <p>${album.artistName.toUpperCase()}</p>
+                    </div>
+                `
+                albumSlider.appendChild(albumCard);
+            }
+            else {
+                albumCard = document.createElement('li');
+                albumCard.setAttribute("class", "box box--hide");
+                albumCard.innerHTML = `
+                    <img src="${album.albumImage}" alt="${album.albumName}" >
+                    <div class="card-title" id="${album.albumId}">
+                        <h2><b>${album.albumName.toUpperCase()}</b></h2>
+                        <p>${album.artistName.toUpperCase()}</p>
+                    </div>
+                `
+                albumSlider.appendChild(albumCard);
+            }
+        });
+        getTracks();
+    });
+};
+
+window.onload = initData();
 
 // function to get tracks for selected album
 function getTracks() {
@@ -325,7 +135,7 @@ function getTracks() {
         songs.albumTracks.forEach((track)=>{
             songsinAlbum.appendChild(song);
             // if song is selected as favorite star will appear as yellow
-            if(track.trackFav) {
+            if(track.trackFav == 1) {
                 song.innerHTML += `
                     <div class="track">
                         <div class="track-number">
@@ -346,7 +156,7 @@ function getTracks() {
                             }
                         </div>
                         <div class="track-time">
-                            <h2>${track.trackDuration}</h2>
+                            <h2 style="font-size:18px;" >${track.trackDuration}</h2>
                         </div>
                     </div>
                 `
@@ -362,7 +172,7 @@ function getTracks() {
                         <label for="fav${track.trackIndex}" class="fas fa-star"></label>
                     </div>
                     <div class="track-title">
-                        <h3>${track.trackName.toUpperCase()}</h3>
+                        <h3 style="padding-top:4px;" >${track.trackName.toUpperCase()}</h3>
                         ${track.trackLabels != null && track.trackLabels.length > 0 ? 
                             track.trackLabels.map((label)=>{
                                 return `
@@ -372,7 +182,7 @@ function getTracks() {
                         }
                     </div>
                     <div class="track-time">
-                        <h2>${track.trackDuration}</h2>
+                        <h2 style="font-size:18px;" >${track.trackDuration}</h2>
                     </div>
                 </div>
             `
@@ -463,19 +273,20 @@ function addFav(id) {
     // finding index of album and checking tracks in album
     let albumIndex = jukeboxAlbums.findIndex(obj => obj.albumId == idOfAlbum);
     let songs = jukeboxAlbums[albumIndex];
-    let favChecked = document.getElementById(id).checked;
+    let favChecked = document.getElementById("fav" + id.toString()).checked;
     // if track at id is favorited, then unfavorite it and change favorite value etc.
     if (favChecked) {
-        document.getElementById(id).checked = true;
-        let trackIndex = songs.albumTracks.findIndex(obj => obj.trackId == id);
-        let fav = songs.albumTracks[trackIndex].trackFav;
-        songs.albumTracks[trackIndex].trackFav = !fav;
+        document.getElementById("fav" + id.toString()).checked = true;
+        let trackIndex = songs.albumTracks.findIndex(obj => obj.trackIndex == id);
+        let track = songs.albumTracks[trackIndex];
+        track.trackFav = 1;
     } 
     else {
-        document.getElementById(id).checked = false;
-        let trackIndex = songs.albumTracks.findIndex(obj => obj.trackId == id);
-        let unFav = songs.albumTracks[trackIndex].trackFav;
-        songs.albumTracks[trackIndex].trackFav = !unFav;
+        document.getElementById("fav" + id.toString()).checked = false;
+        let trackIndex = songs.albumTracks.findIndex(obj => obj.trackIndex == id);
+        let track = songs.albumTracks[trackIndex];
+        songs.albumTracks[trackIndex].trackFav = 0;
+        track.trackFav = 0;
     }
 
 }

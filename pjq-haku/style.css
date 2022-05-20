@@ -20,11 +20,12 @@ h1 {
 h2 {
     text-align: center;
     margin: 0px auto;
-    font-size: large;
+    font-size: 1.1vw;
 }
 
 h3 {
     text-align: left;
+    font-size: 1.3vw;
 }
 
 ul {
@@ -33,6 +34,8 @@ ul {
 
 img {
     padding: 0px 17px;
+    width: 80%;
+    height: 80%;
     max-width: 220px;
     max-height: 220px;
 }
@@ -48,11 +51,14 @@ body {
 }
 
 .card-title {
+    max-height: 20%;
     align-items: center;
     text-align: center;
     overflow: hidden;
-    max-lines: 2;
+    max-lines: 1;
     text-overflow: ellipsis;
+    padding: 2px;
+    text-size-adjust: auto;
 }
 
 p {
@@ -64,9 +70,11 @@ p {
 }
 
 .button {
-    margin-left: 0 3%;
+    /* margin-left: 0 10%; */
     width: 2rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .button--inactive {
@@ -91,19 +99,23 @@ i:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* background-color: beige; */
+    width: 70%;
 }
 
 .cards-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25rem;
+    max-height: 100%;
+    max-width: 100%;
+    /* background-color: aquamarine; */
 }
 
 .box {
     margin-top: 50px;
-    width: 250px;
-    height: 300px;
+    width: 30%;
+    height: 100%;
     box-shadow: 0px 0px 2rem 0px #888888;
     background-color: white;
     justify-content: center;
@@ -131,7 +143,7 @@ i:hover {
 }
 
 .box:nth-child(4n + 1) {
-    transform: scale(0.75);
+    transform: scale(0.6);
     z-index: -2;
 }
 
@@ -307,7 +319,7 @@ i:hover {
     display: -ms-inline-grid;
     align-self: center;
     margin: 0px auto;
-    width: 40%;
+    width: 60%;
     background-color: white;
     max-height: 300px;
     overflow: auto;
