@@ -1,6 +1,3 @@
-// Navigate to link to allow CORS proxy
-https://cors-anywhere.herokuapp.com/corsdemo
-
 // Album object with constructor and each json field as defined
 class Albums {
     constructor(albumId, albumName, artistName, albumImage) {
