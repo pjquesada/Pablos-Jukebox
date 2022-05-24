@@ -460,3 +460,19 @@ input:checked ~ label{
     width: fit-content;
     font-weight: bolder;
 }
+
+.link {
+    margin: 10px auto;
+    align-self: center;
+    text-align: center;
+    background-color: white;
+    border: 2px;
+    border-radius: 10px;
+    border-color: #888888;
+    width: fit-content;
+}
+
+.link:hover {
+    background-color: #00698C;
+    color: white;
+}
